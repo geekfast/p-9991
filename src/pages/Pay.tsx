@@ -34,7 +34,6 @@ const Pay = () => {
           <main className="pb-20">
             <div className="p-4">
               <div className="bg-white rounded-lg p-4 shadow-sm">
-                <h2 className="text-lg font-semibold mb-4">Scan QR Code</h2>
                 <p className="text-gray-600 text-sm mb-4">
                   Point your camera at a DANA QR code to pay
                 </p>
