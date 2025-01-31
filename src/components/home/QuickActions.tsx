@@ -19,7 +19,7 @@ export const QuickActions = () => {
   ];
 
   return (
-    <div className="grid grid-cols-4 gap-4 p-4 bg-white">
+    <div className="grid grid-cols-4 gap-4 p-4 bg-gradient-to-b from-blue-400 to-blue-300">
       {actions.map((action, index) => (
         <button
           key={index}
@@ -32,7 +32,7 @@ export const QuickActions = () => {
             className="w-12 h-12"
             loading="lazy"
           />
-          <span className="text-sm font-medium text-gray-700">{action.label}</span>
+          <span className="text-sm font-medium text-white">{action.label}</span>
         </button>
       ))}
     </div>
