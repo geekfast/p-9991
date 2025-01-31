@@ -12,8 +12,8 @@ export const Navigation = () => {
             src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/6c2ecfcb9fe0b0a3cdd74e34e7c3a63e91d96e0196a854f45db32d3a7cfbbb15"
           />
           <div className="flex items-center text-white">
-            <span className="text-xs font-medium">Rp</span>
-            <span className="text-base font-bold mx-1">2.567.890</span>
+            <span className="text-sm font-medium">Rp</span>
+            <span className="text-xl font-bold mx-1">2.567.890</span>
             <img
               alt="Show/Hide"
               className="h-3 w-3"
