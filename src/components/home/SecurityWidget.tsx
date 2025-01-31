@@ -25,11 +25,7 @@ export const SecurityWidget = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-1">
-              <img
-                src="/lovable-uploads/04961b5f-9e81-45a8-bf0a-7321f201f563.png"
-                alt="Dana Protection"
-                className="h-8"
-              />
+              <span className="font-semibold text-lg">DANA Protection</span>
             </div>
             <div className="flex items-center gap-1">
               <div className="bg-blue-500 text-white px-3 py-1 rounded-full flex items-center gap-1">
