@@ -34,10 +34,6 @@ const Pay = () => {
           <main className="pb-20">
             <div className="p-4">
               <div className="bg-white rounded-lg p-4 shadow-sm">
-                <p className="text-gray-600 text-sm mb-4">
-                  Point your camera at a DANA QR code to pay
-                </p>
-                
                 {/* Camera Scanner Simulation */}
                 <div className="relative w-full aspect-square bg-black rounded-lg overflow-hidden">
                   {/* Scanner Animation */}
@@ -54,6 +50,9 @@ const Pay = () => {
                     </div>
                   </div>
                 </div>
+                <p className="text-gray-600 text-sm mt-4">
+                  Point your camera at a DANA QR code to pay
+                </p>
               </div>
             </div>
           </main>
