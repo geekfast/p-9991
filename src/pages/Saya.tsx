@@ -11,7 +11,7 @@ import {
 
 const Saya = () => {
   return (
-    <div className="min-h-screen bg-background pb-20">
+    <div className="min-h-screen bg-background pb-20 mx-auto max-w-[480px]">
       {/* Header */}
       <header className="sticky top-0 z-10 bg-primary text-primary-foreground">
         <div className="flex items-center px-4 h-14">

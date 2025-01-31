@@ -1,62 +1,15 @@
-import React from "react";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { useIsMobile } from "@/hooks/use-mobile";
 import { Footer } from "@/components/home/Footer";
+import { Card } from "@/components/ui/card";
 
 const Riwayat = () => {
-  const isMobile = useIsMobile();
   const transactions = [
-    {
-      id: 1,
-      date: "31 Jan 2024",
-      type: "Transfer",
-      description: "Transfer ke Budi",
-      amount: -50000,
-      status: "Berhasil"
-    },
-    {
-      id: 2,
-      date: "30 Jan 2024",
-      type: "Top Up",
-      description: "Top Up via BCA",
-      amount: 100000,
-      status: "Berhasil"
-    },
-    {
-      id: 3,
-      date: "29 Jan 2024",
-      type: "Pembayaran",
-      description: "Pulsa Telkomsel",
-      amount: -25000,
-      status: "Berhasil"
-    },
-    {
-      id: 4,
-      date: "28 Jan 2024",
-      type: "Transfer",
-      description: "Transfer ke Ani",
-      amount: -75000,
-      status: "Berhasil"
-    },
-    {
-      id: 5,
-      date: "27 Jan 2024",
-      type: "Top Up",
-      description: "Top Up via Mandiri",
-      amount: 200000,
-      status: "Berhasil"
-    }
+    { title: "Top Up DANA", amount: 500000, date: "23 Jan 2024", type: "income", icon: <img src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/87be36aa233d6639c1a4ee2530a8ca56234a7f689a1572d6b8b6e92587142252" alt="" className="w-6 h-6" loading="lazy" /> },
+    { title: "Pembayaran", amount: 150000, date: "22 Jan 2024", type: "expense", icon: <img src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/87be36aa233d6639c1a4ee2530a8ca56234a7f689a1572d6b8b6e92587142252" alt="" className="w-6 h-6" loading="lazy" /> },
+    { title: "Transfer ke Bank", amount: 200000, date: "21 Jan 2024", type: "expense", icon: <img src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/87be36aa233d6639c1a4ee2530a8ca56234a7f689a1572d6b8b6e92587142252" alt="" className="w-6 h-6" loading="lazy" /> },
   ];
 
   return (
-    <div className="min-h-screen bg-background pb-20">
+    <div className="min-h-screen bg-background pb-20 mx-auto max-w-[480px]">
       {/* Header */}
       <header className="sticky top-0 z-10 bg-primary text-primary-foreground">
         <div className="flex items-center px-4 h-14">
@@ -64,66 +17,30 @@ const Riwayat = () => {
         </div>
       </header>
 
-      {/* Transaction List */}
-      <div className="p-4">
-        {isMobile ? (
-          // Mobile view - Card layout
-          <div className="space-y-4">
-            {transactions.map((transaction) => (
-              <div 
-                key={transaction.id} 
-                className="bg-card rounded-lg shadow-sm p-4 space-y-2"
-              >
-                <div className="flex justify-between items-start">
-                  <div>
-                    <div className="font-medium">{transaction.type}</div>
-                    <div className="text-sm text-muted-foreground">{transaction.description}</div>
-                  </div>
-                  <span className={`font-medium ${transaction.amount < 0 ? 'text-red-600' : 'text-green-600'}`}>
-                    Rp {Math.abs(transaction.amount).toLocaleString('id-ID')}
-                  </span>
+      {/* Content */}
+      <div className="p-4 space-y-4">
+        {transactions.map((transaction, index) => (
+          <Card key={index} className="p-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-3">
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
+                  transaction.type === 'income' ? 'bg-green-100' : 'bg-red-100'
+                }`}>
+                  {transaction.icon}
                 </div>
-                <div className="flex justify-between items-center text-sm">
-                  <span className="text-muted-foreground">{transaction.date}</span>
-                  <span className="inline-flex items-center rounded-full px-2 py-1 text-xs font-medium bg-green-100 text-green-700">
-                    {transaction.status}
-                  </span>
+                <div>
+                  <div className="font-medium">{transaction.title}</div>
+                  <div className="text-sm text-muted-foreground">{transaction.date}</div>
                 </div>
               </div>
-            ))}
-          </div>
-        ) : (
-          // Desktop view - Table layout
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Tanggal</TableHead>
-                <TableHead>Deskripsi</TableHead>
-                <TableHead className="text-right">Nominal</TableHead>
-                <TableHead>Status</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {transactions.map((transaction) => (
-                <TableRow key={transaction.id}>
-                  <TableCell className="font-medium">{transaction.date}</TableCell>
-                  <TableCell>
-                    <div className="font-medium">{transaction.type}</div>
-                    <div className="text-sm text-muted-foreground">{transaction.description}</div>
-                  </TableCell>
-                  <TableCell className={`text-right ${transaction.amount < 0 ? 'text-red-600' : 'text-green-600'}`}>
-                    Rp {Math.abs(transaction.amount).toLocaleString('id-ID')}
-                  </TableCell>
-                  <TableCell>
-                    <span className="inline-flex items-center rounded-full px-2 py-1 text-xs font-medium bg-green-100 text-green-700">
-                      {transaction.status}
-                    </span>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        )}
+              <span className={`font-medium ${
+                transaction.type === 'income' ? 'text-green-600' : 'text-red-600'
+              }`}>
+                {transaction.type === 'income' ? '+' : '-'}Rp {transaction.amount}
+              </span>
+            </div>
+          </Card>
+        ))}
       </div>
 
       <Footer />

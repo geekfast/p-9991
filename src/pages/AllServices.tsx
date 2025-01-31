@@ -53,7 +53,7 @@ const AllServices = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white mx-auto max-w-[480px]">
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#108ee9]">      
         <nav className="px-4 py-3 flex items-center space-x-3">
           <Button 
