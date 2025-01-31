@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { QrCode } from "lucide-react";
 
 export const Footer = () => {
   const navigate = useNavigate();
@@ -42,12 +43,7 @@ export const Footer = () => {
 
         <button className="flex flex-col items-center -mt-4">
           <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/4508da8f46ad219e791b0b32c8fd61abec75258bf809f05f22c817577a481df9"
-              alt=""
-              className="w-6 h-6"
-              loading="lazy"
-            />
+            <QrCode className="w-6 h-6 text-white" />
           </div>
         </button>
 
