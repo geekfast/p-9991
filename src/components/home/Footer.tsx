@@ -47,7 +47,10 @@ export const Footer = () => {
             <span className="text-[10px]">Riwayat</span>
           </button>
 
-          <button className="flex flex-col items-center -mt-4">
+          <button 
+            onClick={() => navigate('/pay')} 
+            className="flex flex-col items-center -mt-4"
+          >
             <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
               <QrCode className="w-6 h-6 text-white" />
             </div>

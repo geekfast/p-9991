@@ -9,6 +9,7 @@ import AllServices from "./pages/AllServices";
 import NotFound from "./pages/NotFound";
 import Dompet from "./pages/Dompet";
 import Saya from "./pages/Saya";
+import Pay from "./pages/Pay";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/services" element={<AllServices />} />
           <Route path="/dompet" element={<Dompet />} />
           <Route path="/saya" element={<Saya />} />
+          <Route path="/pay" element={<Pay />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
