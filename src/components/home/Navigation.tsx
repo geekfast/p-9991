@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 export const Navigation = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#108ee9]">      
-      <nav className="px-4 py-3 flex justify-between items-center">
+      <nav className="px-4 py-3 flex justify-between items-center max-w-[480px] mx-auto">
         <div className="flex items-center space-x-2">
           <img
             alt="DANA Balance"
