@@ -1,6 +1,57 @@
 import React from "react";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 const Riwayat = () => {
+  const transactions = [
+    {
+      id: 1,
+      date: "31 Jan 2024",
+      type: "Transfer",
+      description: "Transfer ke Budi",
+      amount: -50000,
+      status: "Berhasil"
+    },
+    {
+      id: 2,
+      date: "30 Jan 2024",
+      type: "Top Up",
+      description: "Top Up via BCA",
+      amount: 100000,
+      status: "Berhasil"
+    },
+    {
+      id: 3,
+      date: "29 Jan 2024",
+      type: "Pembayaran",
+      description: "Pulsa Telkomsel",
+      amount: -25000,
+      status: "Berhasil"
+    },
+    {
+      id: 4,
+      date: "28 Jan 2024",
+      type: "Transfer",
+      description: "Transfer ke Ani",
+      amount: -75000,
+      status: "Berhasil"
+    },
+    {
+      id: 5,
+      date: "27 Jan 2024",
+      type: "Top Up",
+      description: "Top Up via Mandiri",
+      amount: 200000,
+      status: "Berhasil"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -29,31 +80,36 @@ const Riwayat = () => {
       </header>
 
       {/* Transaction List */}
-      <div className="p-4 space-y-4">
-        {/* Empty State */}
-        <div className="text-center py-12">
-          <div className="w-24 h-24 mx-auto mb-4 bg-gray-200 rounded-full flex items-center justify-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="40"
-              height="40"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="text-gray-400"
-            >
-              <path d="M3 3v18h18" />
-              <path d="m19 9-5 5-4-4-3 3" />
-            </svg>
-          </div>
-          <p className="text-gray-500 text-lg">Belum ada transaksi</p>
-          <p className="text-gray-400 text-sm mt-2">
-            Transaksi yang Anda lakukan akan muncul di sini
-          </p>
-        </div>
+      <div className="p-4">
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Tanggal</TableHead>
+              <TableHead>Deskripsi</TableHead>
+              <TableHead className="text-right">Nominal</TableHead>
+              <TableHead>Status</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {transactions.map((transaction) => (
+              <TableRow key={transaction.id}>
+                <TableCell className="font-medium">{transaction.date}</TableCell>
+                <TableCell>
+                  <div className="font-medium">{transaction.type}</div>
+                  <div className="text-sm text-gray-500">{transaction.description}</div>
+                </TableCell>
+                <TableCell className={`text-right ${transaction.amount < 0 ? 'text-red-600' : 'text-green-600'}`}>
+                  Rp {Math.abs(transaction.amount).toLocaleString('id-ID')}
+                </TableCell>
+                <TableCell>
+                  <span className="inline-flex items-center rounded-full px-2 py-1 text-xs font-medium bg-green-100 text-green-700">
+                    {transaction.status}
+                  </span>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </div>
     </div>
   );
