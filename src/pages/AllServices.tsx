@@ -25,8 +25,8 @@ const AllServices = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#108ee9]">      
+    <div className="min-h-screen bg-gray-50">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#108ee9] shadow-sm">      
         <nav className="px-4 py-3 flex items-center space-x-3">
           <Button 
             variant="ghost" 
@@ -40,20 +40,22 @@ const AllServices = () => {
         </nav>
       </header>
 
-      <main className="pt-14 p-4">
-        <div className="grid grid-cols-4 gap-4">
+      <main className="pt-14 px-4 pb-4">
+        <div className="grid grid-cols-4 gap-x-3 gap-y-6">
           {services.map((service, index) => (
             <button
               key={index}
-              className="flex flex-col items-center space-y-2 bg-white p-4 rounded-lg shadow-sm"
+              className="flex flex-col items-center group"
             >
-              <img
-                src={service.icon}
-                alt=""
-                className="w-12 h-12"
-                loading="lazy"
-              />
-              <span className="text-xs text-center font-medium text-gray-700">
+              <div className="w-14 h-14 mb-2 rounded-2xl bg-white shadow-sm p-2.5 flex items-center justify-center group-hover:shadow-md transition-shadow duration-200">
+                <img
+                  src={service.icon}
+                  alt=""
+                  className="w-full h-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+              <span className="text-[11px] text-center font-medium text-gray-700 leading-tight">
                 {service.title}
               </span>
             </button>
