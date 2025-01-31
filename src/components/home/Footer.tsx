@@ -52,7 +52,10 @@ export const Footer = () => {
           </div>
         </button>
 
-        <button className="flex flex-col items-center space-y-1">
+        <button 
+          onClick={() => navigate('/dompet')}
+          className={`flex flex-col items-center space-y-1 ${getActiveClass('/dompet')}`}
+        >
           <img
             src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/3c8acc73cd36284284c0d8772598c5f455a111a459ff9285a4a0d725646a5266"
             alt=""
@@ -62,7 +65,10 @@ export const Footer = () => {
           <span className="text-[10px]">Dompet</span>
         </button>
 
-        <button className="flex flex-col items-center space-y-1">
+        <button 
+          onClick={() => navigate('/saya')}
+          className={`flex flex-col items-center space-y-1 ${getActiveClass('/saya')}`}
+        >
           <img
             src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/4a7fe8de0498c7089867ab66fbc7a3cc2d772b163ce857e180152138aa0506b6"
             alt=""
