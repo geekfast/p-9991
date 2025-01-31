@@ -11,12 +11,16 @@ export const ServiceGrid = () => {
     { icon: "https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/1510b4bb21eff743d6ef1716fcae6a4b3096eb791a4f2b774e17278cc81f312f", title: "DANA Kaget" },
     { icon: "https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/4b45361fb7f849e81ee9f1572fd8d702a32d56f9c2bb7568b361fb6d08016e43", title: "Uang Elektronik" },
     { icon: "https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/2b4946d5c069b369b982bb9c481dbca56cadb57ef847cb006d8e87eb7ad088b7", title: "Internet & TV Kabel" },
-    { icon: "https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/652dd8937056268713c9aea0d8bc85444c5b4bbf083d49d1b69901b9d2529763", title: "Lainnya" }
+    { icon: "https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/652dd8937056268713c9aea0d8bc85444c5b4bbf083d49d1b69901b9d2529763", title: "Services" }
   ];
 
   const handleServiceClick = (title: string) => {
-    if (title === "Lainnya") {
-      navigate("/services");
+    if (title === "Services") {
+      // Add a small delay to allow the animation to be visible
+      document.body.classList.add('animate-slide-out-right');
+      setTimeout(() => {
+        navigate("/services");
+      }, 100);
     }
     // Other service clicks can be handled here
   };

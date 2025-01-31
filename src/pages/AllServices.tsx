@@ -1,10 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, Search } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const AllServices = () => {
   const navigate = useNavigate();
   
+  useEffect(() => {
+    // Add animation class when component mounts
+    document.body.classList.add('animate-slide-in-right');
+    
+    // Clean up animation classes when component unmounts
+    return () => {
+      document.body.classList.remove('animate-slide-in-right');
+      document.body.classList.remove('animate-slide-out-right');
+    };
+  }, []);
+
   const categories = [
     {
       title: "Favorit Saya",
@@ -47,7 +59,12 @@ const AllServices = () => {
           <Button 
             variant="ghost" 
             size="icon" 
-            onClick={() => navigate(-1)}
+            onClick={() => {
+              document.body.classList.add('animate-slide-out-right');
+              setTimeout(() => {
+                navigate(-1);
+              }, 100);
+            }}
             className="text-white hover:bg-white/20"
           >
             <ChevronLeft className="h-6 w-6" />
