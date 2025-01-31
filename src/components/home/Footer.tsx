@@ -51,7 +51,7 @@ export const Footer = () => {
             onClick={() => navigate('/pay')} 
             className="flex flex-col items-center -mt-4"
           >
-            <div className="w-11 h-11 bg-blue-600 rounded-full flex items-center justify-center">
+            <div className="w-[3.25rem] h-[3.25rem] bg-blue-600 rounded-full flex items-center justify-center">
               <QrCode className="w-6 h-6 text-white" />
             </div>
           </button>
