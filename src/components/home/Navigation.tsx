@@ -2,16 +2,7 @@ import { Button } from "@/components/ui/button";
 
 export const Navigation = () => {
   return (
-    <header className="bg-gradient-to-b from-blue-500 to-blue-400">
-      <div className="status-bar h-6 bg-transparent">
-        <img
-          alt="Status"
-          className="w-full h-full object-cover"
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/3d65bc3edd0209910b6753c3f972c7bb9e947cf882cea7562866e00270a2aa6a"
-        />
-      </div>
-      
+    <header className="bg-gradient-to-b from-blue-500 to-blue-400">      
       <nav className="px-4 py-2 flex justify-between items-center">
         <div className="flex items-center space-x-2">
           <img
