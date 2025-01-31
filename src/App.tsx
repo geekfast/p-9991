@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import Riwayat from "./pages/Riwayat";
 import AllServices from "./pages/AllServices";
 import NotFound from "./pages/NotFound";
+import Dompet from "./pages/Dompet";
+import Saya from "./pages/Saya";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +22,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/riwayat" element={<Riwayat />} />
           <Route path="/services" element={<AllServices />} />
+          <Route path="/dompet" element={<Dompet />} />
+          <Route path="/saya" element={<Saya />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
