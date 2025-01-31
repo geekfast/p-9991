@@ -13,7 +13,7 @@ const Pay = () => {
 
   return (
     <Drawer modal={false} open={true} onOpenChange={() => navigate(-1)}>
-      <DrawerContent className="fixed inset-x-0 bottom-0 z-50 mt-24 h-[95vh] rounded-t-[10px] border bg-background">
+      <DrawerContent className="fixed inset-x-0 bottom-0 z-[9999] mt-24 h-[95vh] rounded-t-[10px] border bg-background">
         <DrawerTitle className="sr-only">Pay with QR Code</DrawerTitle>
         <DrawerDescription className="sr-only">
           Scan a QR code to make a payment
