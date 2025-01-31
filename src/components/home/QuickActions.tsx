@@ -19,7 +19,7 @@ export const QuickActions = () => {
   ];
 
   return (
-    <div className="grid grid-cols-4 gap-2 px-4 py-3 bg-gradient-to-b from-blue-400 to-blue-300">
+    <div className="grid grid-cols-4 gap-2 px-4 py-3 bg-[#108ee9]">
       {actions.map((action, index) => (
         <button
           key={index}
