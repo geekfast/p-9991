@@ -1,8 +1,13 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { QrCode } from "lucide-react";
 
 export const Footer = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const getActiveClass = (path: string) => {
+    return location.pathname === path ? "text-blue-600" : "text-gray-600";
+  };
 
   return (
     <footer className="bg-white">
@@ -14,10 +19,10 @@ export const Footer = () => {
         </p>
       </div>
 
-      <nav className="fixed bottom-0 left-0 right-0 bg-white border-t flex items-center justify-between px-6 py-2">
+      <nav className="fixed bottom-0 left-0 right-0 bg-white border-t flex items-center justify-between px-6 py-2 z-50">
         <button 
           onClick={() => navigate('/')}
-          className="flex flex-col items-center space-y-1"
+          className={`flex flex-col items-center space-y-1 ${getActiveClass('/')}`}
         >
           <img
             src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/e20ec1d58a3d4c32ec861d3cd5b81eca098b868bf57a0073bd48f28a0c8ebbdb"
@@ -30,7 +35,7 @@ export const Footer = () => {
 
         <button 
           onClick={() => navigate('/riwayat')}
-          className="flex flex-col items-center space-y-1"
+          className={`flex flex-col items-center space-y-1 ${getActiveClass('/riwayat')}`}
         >
           <img
             src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/c97af117ce0690225d31c21d2830549fde97b6c426f16d21ae95204dcff221d4"
