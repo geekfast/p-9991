@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 export const Navigation = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-blue-500 to-blue-400">      
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#108ee9]">      
       <nav className="px-4 py-3 flex justify-between items-center">
         <div className="flex items-center space-x-2">
           <img
@@ -23,7 +23,7 @@ export const Navigation = () => {
           </div>
         </div>
         
-        <Button variant="ghost" size="sm" className="text-white hover:bg-blue-600/20">
+        <Button variant="ghost" size="sm" className="text-white hover:bg-white/20">
           <img
             alt="Navigation"
             className="h-5 w-5"
