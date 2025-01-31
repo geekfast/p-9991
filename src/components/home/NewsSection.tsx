@@ -6,7 +6,7 @@ export const NewsSection = () => {
       subtitle: "Ini cara dapetin & transfernya"
     },
     {
-      image: "",
+      image: "https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/ded4e2e59d74b957dc1e3157aaffff325f355cbaeb8fe8eb4b2bca4391a7f6e0",
       title: "Ayo Gabung DANA Bisnis",
       subtitle: "Jangkau lebih banyak pelanggan"
     },
