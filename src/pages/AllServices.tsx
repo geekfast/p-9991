@@ -13,7 +13,7 @@ const AllServices = () => {
     // Clean up animation classes when component unmounts
     return () => {
       document.body.classList.remove('animate-slide-in-right');
-      document.body.classList.remove('animate-slide-out-right');
+      document.body.classList.remove('animate-slide-out-left');
     };
   }, []);
 
@@ -60,7 +60,7 @@ const AllServices = () => {
             variant="ghost" 
             size="icon" 
             onClick={() => {
-              document.body.classList.add('animate-slide-out-right');
+              document.body.classList.add('animate-slide-out-left');
               setTimeout(() => {
                 navigate(-1);
               }, 100);
