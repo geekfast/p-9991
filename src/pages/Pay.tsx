@@ -32,28 +32,26 @@ const Pay = () => {
           </header>
 
           <main className="pb-20">
-            <div className="p-4">
-              <div className="bg-white rounded-lg p-4 shadow-sm">
-                {/* Camera Scanner Simulation */}
-                <div className="relative w-full aspect-square bg-black rounded-lg overflow-hidden">
-                  {/* Scanner Animation */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-48 h-48 border-2 border-white/50 rounded-lg relative">
-                      {/* Scanning line animation */}
-                      <div className="absolute top-0 left-0 w-full h-0.5 bg-blue-500 animate-[scan_2s_ease-in-out_infinite]" />
-                      
-                      {/* Corner markers */}
-                      <div className="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-blue-500" />
-                      <div className="absolute top-0 right-0 w-4 h-4 border-r-2 border-t-2 border-blue-500" />
-                      <div className="absolute bottom-0 left-0 w-4 h-4 border-l-2 border-b-2 border-blue-500" />
-                      <div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-blue-500" />
-                    </div>
+            <div className="bg-white">
+              {/* Camera Scanner Simulation */}
+              <div className="relative w-full aspect-square bg-black">
+                {/* Scanner Animation */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-48 h-48 border-2 border-white/50 rounded-lg relative">
+                    {/* Scanning line animation */}
+                    <div className="absolute top-0 left-0 w-full h-0.5 bg-blue-500 animate-[scan_2s_ease-in-out_infinite]" />
+                    
+                    {/* Corner markers */}
+                    <div className="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-blue-500" />
+                    <div className="absolute top-0 right-0 w-4 h-4 border-r-2 border-t-2 border-blue-500" />
+                    <div className="absolute bottom-0 left-0 w-4 h-4 border-l-2 border-b-2 border-blue-500" />
+                    <div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-blue-500" />
                   </div>
                 </div>
-                <p className="text-gray-600 text-sm mt-4">
-                  Point your camera at a DANA QR code to pay
-                </p>
               </div>
+              <p className="text-gray-600 text-sm p-4">
+                Point your camera at a DANA QR code to pay
+              </p>
             </div>
           </main>
         </div>
