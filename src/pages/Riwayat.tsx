@@ -7,8 +7,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Riwayat = () => {
+  const isMobile = useIsMobile();
   const transactions = [
     {
       id: 1,
@@ -53,13 +55,13 @@ const Riwayat = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-gradient-to-b from-blue-500 to-blue-400 p-4">
-        <div className="flex items-center">
+      <header className="sticky top-0 z-10 bg-primary text-primary-foreground">
+        <div className="flex items-center px-4 h-14">
           <button 
             onClick={() => window.history.back()}
-            className="text-white mr-4"
+            className="mr-4 hover:opacity-75 transition-opacity"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -75,41 +77,70 @@ const Riwayat = () => {
               <path d="M19 12H5M12 19l-7-7 7-7" />
             </svg>
           </button>
-          <h1 className="text-xl font-semibold text-white">Riwayat Transaksi</h1>
+          <h1 className="text-lg font-semibold">Riwayat Transaksi</h1>
         </div>
       </header>
 
       {/* Transaction List */}
       <div className="p-4">
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Tanggal</TableHead>
-              <TableHead>Deskripsi</TableHead>
-              <TableHead className="text-right">Nominal</TableHead>
-              <TableHead>Status</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
+        {isMobile ? (
+          // Mobile view - Card layout
+          <div className="space-y-4">
             {transactions.map((transaction) => (
-              <TableRow key={transaction.id}>
-                <TableCell className="font-medium">{transaction.date}</TableCell>
-                <TableCell>
-                  <div className="font-medium">{transaction.type}</div>
-                  <div className="text-sm text-gray-500">{transaction.description}</div>
-                </TableCell>
-                <TableCell className={`text-right ${transaction.amount < 0 ? 'text-red-600' : 'text-green-600'}`}>
-                  Rp {Math.abs(transaction.amount).toLocaleString('id-ID')}
-                </TableCell>
-                <TableCell>
+              <div 
+                key={transaction.id} 
+                className="bg-card rounded-lg shadow-sm p-4 space-y-2"
+              >
+                <div className="flex justify-between items-start">
+                  <div>
+                    <div className="font-medium">{transaction.type}</div>
+                    <div className="text-sm text-muted-foreground">{transaction.description}</div>
+                  </div>
+                  <span className={`font-medium ${transaction.amount < 0 ? 'text-red-600' : 'text-green-600'}`}>
+                    Rp {Math.abs(transaction.amount).toLocaleString('id-ID')}
+                  </span>
+                </div>
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-muted-foreground">{transaction.date}</span>
                   <span className="inline-flex items-center rounded-full px-2 py-1 text-xs font-medium bg-green-100 text-green-700">
                     {transaction.status}
                   </span>
-                </TableCell>
-              </TableRow>
+                </div>
+              </div>
             ))}
-          </TableBody>
-        </Table>
+          </div>
+        ) : (
+          // Desktop view - Table layout
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Tanggal</TableHead>
+                <TableHead>Deskripsi</TableHead>
+                <TableHead className="text-right">Nominal</TableHead>
+                <TableHead>Status</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {transactions.map((transaction) => (
+                <TableRow key={transaction.id}>
+                  <TableCell className="font-medium">{transaction.date}</TableCell>
+                  <TableCell>
+                    <div className="font-medium">{transaction.type}</div>
+                    <div className="text-sm text-muted-foreground">{transaction.description}</div>
+                  </TableCell>
+                  <TableCell className={`text-right ${transaction.amount < 0 ? 'text-red-600' : 'text-green-600'}`}>
+                    Rp {Math.abs(transaction.amount).toLocaleString('id-ID')}
+                  </TableCell>
+                  <TableCell>
+                    <span className="inline-flex items-center rounded-full px-2 py-1 text-xs font-medium bg-green-100 text-green-700">
+                      {transaction.status}
+                    </span>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        )}
       </div>
     </div>
   );
