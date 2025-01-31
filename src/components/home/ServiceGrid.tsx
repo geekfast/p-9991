@@ -5,7 +5,7 @@ export const ServiceGrid = () => {
     { icon: "https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/bb1805e30d090866a6ae2d9ac5ad5352fc66a2a643cc1c5eadcb25c79419231b", title: "Pulsa & Data" },
     { icon: "https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/e7313d5b6816e8a29aa4e5f02689a20d91bea6e9e8b3887ac72808586fd24a6e", title: "DANA Deals" },
     { icon: "https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/d7ee606a21943a3c78c354ccdc85a353366c5fa8b7a010600acb1c74c54bac6f", title: "My Bills" },
-    { icon: "https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/38a426adff699ac06b73eda83607a96ac86d7b4e96015644be8f1f7032be002c?placeholderIfAbsent=true&width=100 100w, https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/38a426adff699ac06b73eda83607a96ac86d7b4e96015644be8f1f7032be002c?placeholderIfAbsent=true&width=200 200w, https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/38a426adff699ac06b73eda83607a96ac86d7b4e96015644be8f1f7032be002c?placeholderIfAbsent=true&width=400 400w, https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/38a426adff699ac06b73eda83607a96ac86d7b4e96015644be8f1f7032be002c?placeholderIfAbsent=true&width=800 800w, https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/38a426adff699ac06b73eda83607a96ac86d7b4e96015644be8f1f7032be002c?placeholderIfAbsent=true&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/38a426adff699ac06b73eda83607a96ac86d7b4e96015644be8f1f7032be002c?placeholderIfAbsent=true&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/38a426adff699ac06b73eda83607a96ac86d7b4e96015644be8f1f7032be002c?placeholderIfAbsent=true&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/38a426adff699ac06b73eda83607a96ac86d7b4e96015644be8f1f7032be002c?placeholderIfAbsent=true", title: "A+ Rewards" },
+    { icon: "https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/38a426adff699ac06b73eda83607a96ac86d7b4e96015644be8f1f7032be002c", title: "A+ Rewards" },
     { icon: "https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/1510b4bb21eff743d6ef1716fcae6a4b3096eb791a4f2b774e17278cc81f312f", title: "DANA Kaget" },
     { icon: "https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/4b45361fb7f849e81ee9f1572fd8d702a32d56f9c2bb7568b361fb6d08016e43", title: "Uang Elektronik" },
     { icon: "https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/2b4946d5c069b369b982bb9c481dbca56cadb57ef847cb006d8e87eb7ad088b7", title: "Internet & TV Kabel" },
@@ -13,26 +13,24 @@ export const ServiceGrid = () => {
   ];
 
   return (
-    <div className="p-4 bg-white">
-      <div className="grid grid-cols-4 gap-4">
-        {services.map((service, index) => (
-          <button
-            key={index}
-            className="flex flex-col items-center space-y-2"
-            aria-label={service.title}
-          >
-            <img
-              src={service.icon}
-              alt=""
-              className="w-12 h-12"
-              loading="lazy"
-            />
-            <span className="text-xs text-center font-medium text-gray-700">
-              {service.title}
-            </span>
-          </button>
-        ))}
-      </div>
+    <div className="grid grid-cols-4 gap-3 p-3">
+      {services.map((service, index) => (
+        <button
+          key={index}
+          className="flex flex-col items-center space-y-1.5"
+          aria-label={service.title}
+        >
+          <img
+            src={service.icon}
+            alt=""
+            className="w-10 h-10"
+            loading="lazy"
+          />
+          <span className="text-[10px] text-center font-medium text-gray-700 leading-tight">
+            {service.title}
+          </span>
+        </button>
+      ))}
     </div>
   );
 };

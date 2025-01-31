@@ -8,13 +8,13 @@ import {
 
 export const DealsSection = () => {
   return (
-    <section className="bg-white p-4 space-y-4">
+    <section className="px-4 py-3 space-y-3 bg-white">
       <div className="flex justify-between items-center">
         <div>
-          <h2 className="text-lg font-bold">DANA Deals</h2>
-          <p className="text-sm text-gray-600">Voucher terbaik di dekat kamu!</p>
+          <h2 className="text-base font-bold">DANA Deals</h2>
+          <p className="text-xs text-gray-600">Voucher terbaik di dekat kamu!</p>
         </div>
-        <button className="text-blue-600 text-sm font-medium">EXPLORE</button>
+        <button className="text-blue-600 text-xs font-medium">EXPLORE</button>
       </div>
 
       <Carousel className="w-full">
@@ -52,8 +52,6 @@ export const DealsSection = () => {
             />
           </CarouselItem>
         </CarouselContent>
-        <CarouselPrevious className="hidden sm:flex" />
-        <CarouselNext className="hidden sm:flex" />
       </Carousel>
     </section>
   );

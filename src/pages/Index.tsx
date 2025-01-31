@@ -12,17 +12,17 @@ const Index = () => {
     <div className="min-h-screen bg-gray-100">
       <Navigation />
       
-      <main className="pb-16">
+      <main className="pt-14 pb-20">
         <QuickActions />
         
         <div className="space-y-2">
-          <div className="bg-white p-4">
-            <div className="flex items-center justify-between mb-4">
+          <div className="bg-white">
+            <div className="flex items-center justify-between px-4 py-3">
               <div>
-                <h2 className="text-lg font-medium">Send to Bank</h2>
-                <p className="text-sm text-gray-600">Kirim cepat & gampang</p>
+                <h2 className="text-base font-medium">Send to Bank</h2>
+                <p className="text-xs text-gray-600">Kirim cepat & gampang</p>
               </div>
-              <button className="px-4 py-1 bg-blue-600 text-white rounded-full text-sm">
+              <button className="px-3 py-1 bg-blue-600 text-white rounded-full text-xs">
                 KIRIM
               </button>
             </div>

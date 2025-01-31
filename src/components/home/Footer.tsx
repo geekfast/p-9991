@@ -5,7 +5,7 @@ export const Footer = () => {
 
   return (
     <footer className="bg-white">
-      <div className="p-4 text-center text-sm text-gray-600">
+      <div className="px-4 py-3 text-center text-xs text-gray-600">
         <p>DANA Indonesia terdaftar serta diawasi</p>
         <p>
           oleh <span className="font-bold">Bank Indonesia</span> dan{" "}
@@ -13,7 +13,7 @@ export const Footer = () => {
         </p>
       </div>
 
-      <nav className="border-t flex items-center justify-between px-4 py-2">
+      <nav className="fixed bottom-0 left-0 right-0 bg-white border-t flex items-center justify-between px-6 py-2">
         <button 
           onClick={() => navigate('/')}
           className="flex flex-col items-center space-y-1"
@@ -21,10 +21,10 @@ export const Footer = () => {
           <img
             src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/e20ec1d58a3d4c32ec861d3cd5b81eca098b868bf57a0073bd48f28a0c8ebbdb"
             alt=""
-            className="w-6 h-6"
+            className="w-5 h-5"
             loading="lazy"
           />
-          <span className="text-xs">Beranda</span>
+          <span className="text-[10px]">Beranda</span>
         </button>
 
         <button 
@@ -34,34 +34,41 @@ export const Footer = () => {
           <img
             src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/c97af117ce0690225d31c21d2830549fde97b6c426f16d21ae95204dcff221d4"
             alt=""
-            className="w-6 h-6"
+            className="w-5 h-5"
             loading="lazy"
           />
-          <span className="text-xs">Riwayat</span>
+          <span className="text-[10px]">Riwayat</span>
         </button>
 
-        <button className="flex flex-col items-center space-y-1">
-          <div className="w-12 h-12 bg-blue-600 rounded-full" />
+        <button className="flex flex-col items-center -mt-4">
+          <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/4508da8f46ad219e791b0b32c8fd61abec75258bf809f05f22c817577a481df9"
+              alt=""
+              className="w-6 h-6"
+              loading="lazy"
+            />
+          </div>
         </button>
 
         <button className="flex flex-col items-center space-y-1">
           <img
             src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/3c8acc73cd36284284c0d8772598c5f455a111a459ff9285a4a0d725646a5266"
             alt=""
-            className="w-6 h-6"
+            className="w-5 h-5"
             loading="lazy"
           />
-          <span className="text-xs">Dompet</span>
+          <span className="text-[10px]">Dompet</span>
         </button>
 
         <button className="flex flex-col items-center space-y-1">
           <img
             src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/4a7fe8de0498c7089867ab66fbc7a3cc2d772b163ce857e180152138aa0506b6"
             alt=""
-            className="w-6 h-6"
+            className="w-5 h-5"
             loading="lazy"
           />
-          <span className="text-xs">Saya</span>
+          <span className="text-[10px]">Saya</span>
         </button>
       </nav>
     </footer>

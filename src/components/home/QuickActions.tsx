@@ -19,20 +19,20 @@ export const QuickActions = () => {
   ];
 
   return (
-    <div className="grid grid-cols-4 gap-4 p-4 bg-gradient-to-b from-blue-400 to-blue-300">
+    <div className="grid grid-cols-4 gap-2 px-4 py-3 bg-gradient-to-b from-blue-400 to-blue-300">
       {actions.map((action, index) => (
         <button
           key={index}
-          className="flex flex-col items-center space-y-2"
+          className="flex flex-col items-center space-y-1.5"
           aria-label={action.label}
         >
           <img
             src={action.icon}
             alt={action.label}
-            className="w-12 h-12"
+            className="w-10 h-10"
             loading="lazy"
           />
-          <span className="text-sm font-medium text-white">{action.label}</span>
+          <span className="text-xs font-medium text-white">{action.label}</span>
         </button>
       ))}
     </div>

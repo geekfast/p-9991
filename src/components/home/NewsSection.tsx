@@ -18,27 +18,27 @@ export const NewsSection = () => {
   ];
 
   return (
-    <section className="bg-white p-4 space-y-4">
+    <section className="px-4 py-3 space-y-3 bg-white">
       <div className="flex justify-between items-center">
         <div>
-          <h2 className="text-lg font-bold">Terbaru Untukmu</h2>
-          <p className="text-sm text-gray-600">Kabar terbaik minggu ini!</p>
+          <h2 className="text-base font-bold">Terbaru Untukmu</h2>
+          <p className="text-xs text-gray-600">Kabar terbaik minggu ini!</p>
         </div>
-        <button className="text-blue-600 text-sm font-medium">VIEW ALL</button>
+        <button className="text-blue-600 text-xs font-medium">VIEW ALL</button>
       </div>
 
-      <div className="grid grid-cols-1 gap-4">
+      <div className="space-y-3">
         {news.map((item, index) => (
-          <div key={index} className="flex space-x-4">
+          <div key={index} className="flex space-x-3">
             <img
               src={item.image}
               alt=""
-              className="w-24 h-24 rounded-lg object-cover"
+              className="w-20 h-20 rounded-lg object-cover"
               loading="lazy"
             />
             <div className="flex flex-col justify-center">
-              <h3 className="font-medium">{item.title}</h3>
-              <p className="text-sm text-gray-600">{item.subtitle}</p>
+              <h3 className="text-sm font-medium">{item.title}</h3>
+              <p className="text-xs text-gray-600">{item.subtitle}</p>
             </div>
           </div>
         ))}
