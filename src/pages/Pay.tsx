@@ -13,14 +13,14 @@ const Pay = () => {
 
   return (
     <Drawer modal={false} open={true} onOpenChange={() => navigate(-1)}>
-      <DrawerContent className="max-h-[95vh] fixed">
+      <DrawerContent className="fixed inset-x-0 bottom-0 z-50 mt-24 h-[95vh] rounded-t-[10px] border bg-background">
         <DrawerTitle className="sr-only">Pay with QR Code</DrawerTitle>
         <DrawerDescription className="sr-only">
           Scan a QR code to make a payment
         </DrawerDescription>
         
-        <div className="bg-background mx-auto w-full max-w-[480px]">
-          <header className="bg-[#108ee9]">      
+        <div className="bg-background mx-auto w-full max-w-[480px] h-full overflow-auto">
+          <header className="bg-[#108ee9] sticky top-0">      
             <nav className="px-4 py-3 flex items-center space-x-3">
               <button 
                 onClick={() => navigate(-1)}
