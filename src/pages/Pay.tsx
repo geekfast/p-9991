@@ -21,7 +21,7 @@ const Pay = () => {
         <div className="bg-background mx-auto w-full max-w-[480px] h-full overflow-auto">
           <header className="bg-[#108ee9] sticky top-0">      
             <nav className="px-4 py-3 flex items-center justify-between">
-              <h1 className="text-white text-lg font-medium">Scan QR Code</h1>
+              <h1 className="text-white text-lg font-medium">Pay</h1>
               <button 
                 onClick={() => navigate(-1)}
                 className="text-white hover:bg-white/20 rounded-full p-1"
