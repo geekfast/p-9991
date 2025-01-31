@@ -1,7 +1,12 @@
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Footer } from "@/components/home/Footer";
-import { Drawer, DrawerContent } from "@/components/ui/drawer";
+import { 
+  Drawer, 
+  DrawerContent,
+  DrawerTitle,
+  DrawerDescription 
+} from "@/components/ui/drawer";
 
 const Pay = () => {
   const navigate = useNavigate();
@@ -9,6 +14,11 @@ const Pay = () => {
   return (
     <Drawer modal={false} open={true} onOpenChange={() => navigate(-1)}>
       <DrawerContent className="max-h-[95vh] fixed">
+        <DrawerTitle className="sr-only">Pay with QR Code</DrawerTitle>
+        <DrawerDescription className="sr-only">
+          Scan a QR code to make a payment
+        </DrawerDescription>
+        
         <div className="bg-background mx-auto w-full max-w-[480px]">
           <header className="bg-[#108ee9]">      
             <nav className="px-4 py-3 flex items-center space-x-3">
