@@ -1,6 +1,5 @@
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { Footer } from "@/components/home/Footer";
 import { 
   Drawer, 
   DrawerContent,
@@ -42,8 +41,6 @@ const Pay = () => {
               </div>
             </div>
           </main>
-
-          <Footer />
         </div>
       </DrawerContent>
     </Drawer>
