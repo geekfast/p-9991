@@ -8,6 +8,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { Footer } from "@/components/home/Footer";
 
 const Riwayat = () => {
   const isMobile = useIsMobile();
@@ -55,7 +56,7 @@ const Riwayat = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-20">
       {/* Header */}
       <header className="sticky top-0 z-10 bg-primary text-primary-foreground">
         <div className="flex items-center px-4 h-14">
@@ -142,6 +143,8 @@ const Riwayat = () => {
           </Table>
         )}
       </div>
+
+      <Footer />
     </div>
   );
 };
