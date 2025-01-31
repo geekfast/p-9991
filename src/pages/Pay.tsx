@@ -1,4 +1,4 @@
-import { ArrowLeft } from "lucide-react";
+import { X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { 
   Drawer, 
@@ -20,14 +20,14 @@ const Pay = () => {
         
         <div className="bg-background mx-auto w-full max-w-[480px] h-full overflow-auto">
           <header className="bg-[#108ee9] sticky top-0">      
-            <nav className="px-4 py-3 flex items-center space-x-3">
+            <nav className="px-4 py-3 flex items-center justify-between">
+              <h1 className="text-white text-lg font-medium">Pay</h1>
               <button 
                 onClick={() => navigate(-1)}
                 className="text-white hover:bg-white/20 rounded-full p-1"
               >
-                <ArrowLeft className="h-6 w-6" />
+                <X className="h-6 w-6" />
               </button>
-              <h1 className="text-white text-lg font-medium">Pay</h1>
             </nav>
           </header>
 
