@@ -2,8 +2,8 @@ import { Button } from "@/components/ui/button";
 
 export const Navigation = () => {
   return (
-    <header className="bg-white shadow-sm">
-      <div className="status-bar h-6 bg-white">
+    <header className="bg-gradient-to-b from-blue-500 to-blue-400">
+      <div className="status-bar h-6 bg-transparent">
         <img
           alt="Status"
           className="w-full h-full object-cover"
@@ -20,7 +20,7 @@ export const Navigation = () => {
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/6c2ecfcb9fe0b0a3cdd74e34e7c3a63e91d96e0196a854f45db32d3a7cfbbb15"
           />
-          <div className="flex items-center">
+          <div className="flex items-center text-white">
             <span className="text-sm font-medium">Rp</span>
             <span className="text-lg font-bold mx-1">2.567.890</span>
             <img
@@ -32,7 +32,7 @@ export const Navigation = () => {
           </div>
         </div>
         
-        <Button variant="ghost" size="icon">
+        <Button variant="ghost" size="icon" className="text-white hover:bg-blue-600/20">
           <img
             alt="Navigation"
             className="h-6 w-6"
