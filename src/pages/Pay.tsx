@@ -7,8 +7,8 @@ const Pay = () => {
   const navigate = useNavigate();
 
   return (
-    <Drawer open={true} onOpenChange={() => navigate(-1)}>
-      <DrawerContent className="max-h-[95vh]">
+    <Drawer modal={false} open={true} onOpenChange={() => navigate(-1)}>
+      <DrawerContent className="max-h-[95vh] fixed">
         <div className="bg-background mx-auto w-full max-w-[480px]">
           <header className="bg-[#108ee9]">      
             <nav className="px-4 py-3 flex items-center space-x-3">
