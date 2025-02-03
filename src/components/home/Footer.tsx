@@ -52,7 +52,7 @@ export const Footer = () => {
             className="flex flex-col items-center -mt-4"
           >
             <div className="w-[3.25rem] h-[3.25rem] bg-blue-600 rounded-full flex items-center justify-center">
-              <QrCode className="w-6 h-6 text-white" />
+              <QrCode className="w-7 h-7 text-white" />
             </div>
           </button>
 
