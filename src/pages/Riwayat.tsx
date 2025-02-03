@@ -1,7 +1,7 @@
 import { Footer } from "@/components/home/Footer";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { ChevronRight, Search } from "lucide-react";
+import { ChevronRight, Search, Plus } from "lucide-react";
 
 const Riwayat = () => {
   const transactions = [
