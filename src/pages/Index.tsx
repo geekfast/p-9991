@@ -22,7 +22,7 @@ const Index = () => {
                 <h2 className="text-base font-medium">Send to Bank</h2>
                 <p className="text-xs text-gray-600">Kirim cepat & gampang</p>
               </div>
-              <button className="px-3 py-1 bg-blue-600 text-white rounded-full text-xs">
+              <button className="px-3 py-1 bg-[#108ee9] text-white rounded-full text-xs">
                 KIRIM
               </button>
             </div>
