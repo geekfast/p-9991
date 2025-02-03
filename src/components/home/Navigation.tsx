@@ -26,7 +26,7 @@ export const Navigation = () => {
         <Button variant="ghost" size="sm" className="text-white hover:bg-white/20">
           <img
             alt="Navigation"
-            className="h-5 w-5"
+            className="h-6 w-6"
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/4508da8f46ad219e791b0b32c8fd61abec75258bf809f05f22c817577a481df9"
           />
