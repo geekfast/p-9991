@@ -3,8 +3,11 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Search, Plus, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useState } from "react";
 
 const Dompet = () => {
+  const [expandedCard, setExpandedCard] = useState<string | null>(null);
+
   return (
     <div className="min-h-screen bg-background pb-20 mx-auto max-w-[480px]">
       {/* Header */}
@@ -33,23 +36,44 @@ const Dompet = () => {
             <h2 className="text-sm font-medium text-muted-foreground">METODE PEMBAYARAN</h2>
             <span className="text-sm text-muted-foreground">5 KARTU</span>
           </div>
-          <div className="space-y-2">
+          <div className="space-y-2 relative">
             <PaymentCard 
+              id="bri"
               name="BANK BRI"
               type="DEBIT"
               bgColor="bg-gradient-to-r from-gray-700 to-gray-900"
+              isExpanded={expandedCard === "bri"}
+              onToggle={() => setExpandedCard(expandedCard === "bri" ? null : "bri")}
+              style={{
+                zIndex: expandedCard === "bri" ? 30 : 20,
+                transform: `translateY(${expandedCard === "bri" ? "0" : "-8px"})`
+              }}
             />
             <PaymentCard 
+              id="permata"
               name="PermataBank"
               type="DEBIT"
               bgColor="bg-gradient-to-r from-green-700 to-green-900"
+              isExpanded={expandedCard === "permata"}
+              onToggle={() => setExpandedCard(expandedCard === "permata" ? null : "permata")}
+              style={{
+                zIndex: expandedCard === "permata" ? 30 : 10,
+                transform: `translateY(${expandedCard === "permata" ? "0" : "-16px"})`
+              }}
             />
             <PaymentCard 
+              id="dana"
               name="DANA"
               type=""
               bgColor="bg-blue-500"
               button="BUKA"
               className="rounded-b-3xl"
+              isExpanded={expandedCard === "dana"}
+              onToggle={() => setExpandedCard(expandedCard === "dana" ? null : "dana")}
+              style={{
+                zIndex: expandedCard === "dana" ? 30 : 0,
+                transform: `translateY(${expandedCard === "dana" ? "0" : "-24px"})`
+              }}
             />
           </div>
         </section>
@@ -165,14 +189,37 @@ const Dompet = () => {
 };
 
 // Helper Components
-const PaymentCard = ({ name, type, bgColor, button, className }: { 
+const PaymentCard = ({ 
+  id,
+  name, 
+  type, 
+  bgColor, 
+  button, 
+  className,
+  isExpanded,
+  onToggle,
+  style
+}: { 
+  id: string;
   name: string;
   type?: string;
   bgColor: string;
   button?: string;
   className?: string;
+  isExpanded?: boolean;
+  onToggle?: () => void;
+  style?: React.CSSProperties;
 }) => (
-  <Card className={cn("p-4 rounded-xl", bgColor, className)}>
+  <Card 
+    className={cn(
+      "p-4 rounded-xl cursor-pointer transition-all duration-300 ease-in-out", 
+      bgColor, 
+      className,
+      isExpanded ? "scale-105" : ""
+    )}
+    onClick={onToggle}
+    style={style}
+  >
     <div className="flex items-center justify-between text-white">
       <div>
         <div className="font-medium">{name}</div>
