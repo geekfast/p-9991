@@ -35,7 +35,7 @@ export const NewsSection = () => {
               <img
                 src={item.image}
                 alt=""
-                className="w-20 h-20 rounded-lg object-cover"
+                className="w-16 h-16 rounded-lg object-cover"
                 loading="lazy"
               />
               <div className="flex flex-col justify-center">
