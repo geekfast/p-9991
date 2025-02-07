@@ -3,7 +3,7 @@ import { ShieldCheck, ArrowRight, Check, Search, Percent } from "lucide-react";
 
 export const SecurityWidget = () => {
   return (
-    <div className="rounded-xl overflow-hidden mx-4">
+    <div className="bg-white rounded-xl overflow-hidden mx-4">
       {/* Header section */}
       <div className="bg-blue-500 text-white p-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
@@ -14,7 +14,7 @@ export const SecurityWidget = () => {
       </div>
 
       {/* Search section */}
-      <div className="bg-white p-4">
+      <div className="p-4">
         <div className="flex items-center gap-2 px-4 py-3 rounded-full border border-gray-200">
           <Search className="w-5 h-5 text-gray-400" />
           <span className="text-gray-400">Ada yang kirim link mencurigakan?</span>
@@ -22,7 +22,7 @@ export const SecurityWidget = () => {
       </div>
 
       {/* Protection status section */}
-      <div className="bg-white px-4 pb-4">
+      <div className="px-4 pb-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-1">

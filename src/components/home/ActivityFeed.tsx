@@ -27,8 +27,8 @@ export const ActivityFeed = () => {
   ];
 
   return (
-    <div className="bg-white p-4 rounded-xl mx-4">
-      <div className="space-y-4">
+    <div className="bg-white rounded-xl overflow-hidden mx-4">
+      <div className="p-4 space-y-4">
         {activities.map((activity, index) => (
           <div key={index} className="flex items-start space-x-3">
             <img

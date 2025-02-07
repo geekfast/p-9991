@@ -19,30 +19,32 @@ export const NewsSection = () => {
   ];
 
   return (
-    <section className="px-4 py-3 space-y-3 bg-white mx-4">
-      <div className="flex justify-between items-center">
-        <div>
-          <h2 className="text-base font-bold">Terbaru Untukmu</h2>
-          <p className="text-xs text-gray-600">Kabar terbaik minggu ini!</p>
-        </div>
-        <button className="text-blue-600 text-xs font-medium">VIEW ALL</button>
-      </div>
-
-      <div className="space-y-3">
-        {news.map((item, index) => (
-          <div key={index} className="flex space-x-3">
-            <img
-              src={item.image}
-              alt=""
-              className="w-20 h-20 rounded-lg object-cover"
-              loading="lazy"
-            />
-            <div className="flex flex-col justify-center">
-              <h3 className="text-sm font-medium">{item.title}</h3>
-              <p className="text-xs text-gray-600">{item.subtitle}</p>
-            </div>
+    <section className="bg-white rounded-xl overflow-hidden mx-4">
+      <div className="px-4 py-3 space-y-3">
+        <div className="flex justify-between items-center">
+          <div>
+            <h2 className="text-base font-bold">Terbaru Untukmu</h2>
+            <p className="text-xs text-gray-600">Kabar terbaik minggu ini!</p>
           </div>
-        ))}
+          <button className="text-blue-600 text-xs font-medium">VIEW ALL</button>
+        </div>
+
+        <div className="space-y-3">
+          {news.map((item, index) => (
+            <div key={index} className="flex space-x-3">
+              <img
+                src={item.image}
+                alt=""
+                className="w-20 h-20 rounded-lg object-cover"
+                loading="lazy"
+              />
+              <div className="flex flex-col justify-center">
+                <h3 className="text-sm font-medium">{item.title}</h3>
+                <p className="text-xs text-gray-600">{item.subtitle}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
