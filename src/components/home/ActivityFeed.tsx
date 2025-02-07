@@ -1,3 +1,4 @@
+
 import { MessageSquare, Star, Gift } from "lucide-react";
 
 export const ActivityFeed = () => {
@@ -26,7 +27,7 @@ export const ActivityFeed = () => {
   ];
 
   return (
-    <div className="bg-white p-4 rounded-xl">
+    <div className="bg-white p-4 rounded-xl mx-4">
       <div className="space-y-4">
         {activities.map((activity, index) => (
           <div key={index} className="flex items-start space-x-3">

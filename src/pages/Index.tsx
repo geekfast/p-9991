@@ -1,3 +1,4 @@
+
 import { Navigation } from "@/components/home/Navigation";
 import { QuickActions } from "@/components/home/QuickActions";
 import { ServiceGrid } from "@/components/home/ServiceGrid";
@@ -15,8 +16,8 @@ const Index = () => {
       <main className="pt-14 pb-20">
         <QuickActions />
         
-        <div className="space-y-2">
-          <div className="bg-white">
+        <div className="space-y-4 mt-4">
+          <div className="bg-white mx-4">
             <div className="flex items-center justify-between px-4 py-3">
               <div>
                 <h2 className="text-base font-medium">Send to Bank</h2>
