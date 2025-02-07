@@ -1,3 +1,4 @@
+
 import {
   Carousel,
   CarouselContent,
@@ -6,7 +7,7 @@ import {
 
 export const DealsSection = () => {
   return (
-    <section className="px-4 py-3 space-y-3 bg-white max-w-[480px] mx-auto">
+    <section className="px-4 py-3 space-y-3 bg-white mx-4">
       <div className="flex justify-between items-center">
         <div>
           <h2 className="text-xl font-bold">DANA Deals</h2>

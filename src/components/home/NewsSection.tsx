@@ -1,3 +1,4 @@
+
 export const NewsSection = () => {
   const news = [
     {
@@ -18,7 +19,7 @@ export const NewsSection = () => {
   ];
 
   return (
-    <section className="px-4 py-3 space-y-3 bg-white">
+    <section className="px-4 py-3 space-y-3 bg-white mx-4">
       <div className="flex justify-between items-center">
         <div>
           <h2 className="text-base font-bold">Terbaru Untukmu</h2>

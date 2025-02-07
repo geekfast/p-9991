@@ -1,8 +1,9 @@
+
 import { ShieldCheck, ArrowRight, Check, Search, Percent } from "lucide-react";
 
 export const SecurityWidget = () => {
   return (
-    <div className="rounded-xl overflow-hidden">
+    <div className="rounded-xl overflow-hidden mx-4">
       {/* Header section */}
       <div className="bg-blue-500 text-white p-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
