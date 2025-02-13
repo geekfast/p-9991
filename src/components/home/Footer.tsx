@@ -1,3 +1,4 @@
+
 import { useNavigate, useLocation } from "react-router-dom";
 import { QrCode } from "lucide-react";
 
@@ -11,14 +12,6 @@ export const Footer = () => {
 
   return (
     <footer className="bg-white">
-      <div className="px-4 py-3 text-center text-xs text-gray-600 max-w-[480px] mx-auto">
-        <p>DANA Indonesia terdaftar serta diawasi</p>
-        <p>
-          oleh <span className="font-bold">Bank Indonesia</span> dan{" "}
-          <span className="font-bold text-gray-500">Komdigi</span>
-        </p>
-      </div>
-
       <nav className="fixed bottom-0 left-0 right-0 bg-white border-t z-50">
         <div className="flex items-center justify-between px-6 py-2 max-w-[480px] mx-auto">
           <button 
