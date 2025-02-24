@@ -1,4 +1,6 @@
 
+import { Button } from "@/components/ui/button";
+
 export const NewsSection = () => {
   const news = [
     {
@@ -26,7 +28,9 @@ export const NewsSection = () => {
             <h2 className="text-base font-bold">Terbaru Untukmu</h2>
             <p className="text-xs text-gray-600">Kabar terbaik minggu ini!</p>
           </div>
-          <button className="text-blue-600 text-xs font-medium">VIEW ALL</button>
+          <Button variant="link" size="sm" className="text-blue-600 font-medium">
+            VIEW ALL
+          </Button>
         </div>
 
         <div className="space-y-3">

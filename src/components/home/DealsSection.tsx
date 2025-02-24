@@ -1,3 +1,5 @@
+
+import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselContent,
@@ -13,9 +15,13 @@ export const DealsSection = () => {
             <h2 className="text-xl font-bold">DANA Deals</h2>
             <p className="text-sm text-gray-600">Voucher terbaik di dekat kamu!</p>
           </div>
-          <button className="text-blue-500 text-sm font-medium px-4 py-2 border border-blue-500 rounded-full">
+          <Button 
+            variant="outline" 
+            size="sm" 
+            className="border-blue-500 text-blue-500 hover:bg-blue-50"
+          >
             EXPLORE
-          </button>
+          </Button>
         </div>
 
         <Carousel className="w-full">

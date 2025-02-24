@@ -1,5 +1,6 @@
 
-import { ShieldCheck, ArrowRight, Check, Search, Percent } from "lucide-react";
+import { ShieldCheck, ArrowRight, Check, Search } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export const SecurityWidget = () => {
   return (
@@ -10,7 +11,9 @@ export const SecurityWidget = () => {
           <ShieldCheck className="w-5 h-5" />
           <span className="text-sm">[x] aktivitas terlindungi!</span>
         </div>
-        <ArrowRight className="w-5 h-5" />
+        <Button variant="ghost" size="icon" className="text-white hover:bg-white/20">
+          <ArrowRight className="w-5 h-5" />
+        </Button>
       </div>
 
       {/* Search section */}
@@ -33,9 +36,9 @@ export const SecurityWidget = () => {
                 <Check className="w-4 h-4" />
                 <span>100%</span>
               </div>
-              <button className="bg-blue-500 text-white px-4 py-1 rounded-full text-sm">
+              <Button variant="primary" size="sm" className="bg-blue-500 hover:bg-blue-600">
                 TERLINDUNGI
-              </button>
+              </Button>
             </div>
           </div>
         </div>
