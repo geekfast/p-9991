@@ -36,7 +36,7 @@ export const SecurityWidget = () => {
                 <Check className="w-4 h-4" />
                 <span>100%</span>
               </div>
-              <Button variant="primary" size="sm" className="bg-blue-500 hover:bg-blue-600">
+              <Button variant="default" size="sm" className="bg-blue-500 hover:bg-blue-600">
                 TERLINDUNGI
               </Button>
             </div>

@@ -25,7 +25,7 @@ const Index = () => {
                 <p className="text-xs text-gray-600">Kirim cepat & gampang</p>
               </div>
               <Button 
-                variant="primary" 
+                variant="default" 
                 size="sm" 
                 className="bg-[#108ee9] hover:bg-[#108ee9]/90"
               >

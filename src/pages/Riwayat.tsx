@@ -1,15 +1,18 @@
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Footer } from "@/components/home/Footer";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { ChevronRight, Search, Plus } from "lucide-react";
+import { ChevronRight, Search, Plus, Download } from "lucide-react";
 
 const Riwayat = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
 
   const transactions = [
     { 
+      id: "1",
       title: "Biznet Ulujami",
       amount: -476750,
       date: "Due date 07 Feb 2025",
@@ -18,6 +21,7 @@ const Riwayat = () => {
       action: "Pay now!"
     },
     { 
+      id: "2",
       title: "Berkah Basamo QRIS",
       amount: -30000,
       date: "03 Feb 2025 • 12:15",
@@ -25,12 +29,13 @@ const Riwayat = () => {
       icon: <img src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/87be36aa233d6639c1a4ee2530a8ca56234a7f689a1572d6b8b6e92587142252" alt="" className="w-10 h-10" loading="lazy" />
     },
     { 
+      id: "3",
       title: "Top Up",
       amount: 700000,
       date: "03 Feb 2025 • 11:23",
       type: "thisMonth",
       icon: <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
-        <Plus className="w-6 h-6 text-white" />
+        <Download className="w-6 h-6 text-white" />
       </div>
     }
   ];
@@ -48,6 +53,11 @@ const Riwayat = () => {
   // Handle search input change
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
+  };
+
+  // Navigate to transaction detail page
+  const handleTransactionClick = (id: string) => {
+    navigate(`/transaction/${id}`);
   };
 
   return (
@@ -81,7 +91,11 @@ const Riwayat = () => {
             </div>
             {filteredUpcoming.length > 0 ? (
               filteredUpcoming.map((transaction, index) => (
-                <Card key={index} className="p-4 mb-2">
+                <Card 
+                  key={index} 
+                  className="p-4 mb-2 cursor-pointer hover:bg-gray-50 transition-colors"
+                  onClick={() => handleTransactionClick(transaction.id)}
+                >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
                       <div className="rounded-lg overflow-hidden">
@@ -119,7 +133,11 @@ const Riwayat = () => {
             </div>
             {filteredThisMonth.length > 0 ? (
               filteredThisMonth.map((transaction, index) => (
-                <Card key={index} className="p-4 mb-2">
+                <Card 
+                  key={index} 
+                  className="p-4 mb-2 cursor-pointer hover:bg-gray-50 transition-colors"
+                  onClick={() => handleTransactionClick(transaction.id)}
+                >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
                       <div className="rounded-lg overflow-hidden">
