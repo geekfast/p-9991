@@ -15,11 +15,24 @@ const Riwayat = () => {
   const transactions = [
     { 
       id: "1",
-      title: "Biznet Ulujami",
-      amount: -476750,
-      date: "Due date 07 Feb 2025",
+      title: "PLN Electricity",
+      amount: -325000,
+      date: "Due date 10 Feb 2025",
       type: "upcoming",
-      icon: <img src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/87be36aa233d6639c1a4ee2530a8ca56234a7f689a1572d6b8b6e92587142252" alt="" className="w-10 h-10" loading="lazy" />,
+      icon: <div className="w-10 h-10 bg-yellow-500 rounded-lg flex items-center justify-center">
+        <img src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/87be36aa233d6639c1a4ee2530a8ca56234a7f689a1572d6b8b6e92587142252" alt="" className="w-6 h-6" loading="lazy" />
+      </div>,
+      action: "Pay now!"
+    },
+    { 
+      id: "17",
+      title: "PDAM Water Bill",
+      amount: -175000,
+      date: "Due date 15 Feb 2025",
+      type: "upcoming",
+      icon: <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+        <img src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/87be36aa233d6639c1a4ee2530a8ca56234a7f689a1572d6b8b6e92587142252" alt="" className="w-6 h-6" loading="lazy" />
+      </div>,
       action: "Pay now!"
     },
     { 
