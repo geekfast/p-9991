@@ -36,14 +36,6 @@ const Riwayat = () => {
       action: "Pay now!"
     },
     { 
-      id: "2",
-      title: "Berkah Basamo QRIS",
-      amount: -30000,
-      date: "03 Feb 2025 • 12:15",
-      type: "thisMonth",
-      icon: <img src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/87be36aa233d6639c1a4ee2530a8ca56234a7f689a1572d6b8b6e92587142252" alt="" className="w-10 h-10" loading="lazy" />
-    },
-    { 
       id: "3",
       title: "Top Up",
       amount: 700000,

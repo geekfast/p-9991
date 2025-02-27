@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { ArrowLeft, Share2, Download, Copy, Check } from "lucide-react";
+import { ArrowLeft, Share2, Download, Copy, Check, Plus, ShoppingCart, CreditCard, Smartphone, Coffee } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/home/Footer";
 import { Card } from "@/components/ui/card";
@@ -28,25 +28,29 @@ const TransactionDetail = () => {
   const transactions: Transaction[] = [
     { 
       id: "1",
-      title: "Biznet Ulujami",
-      amount: -476750,
-      date: "Due date 07 Feb 2025",
+      title: "PLN Electricity",
+      amount: -325000,
+      date: "Due date 10 Feb 2025",
       type: "upcoming",
       status: "Pending",
-      description: "Payment for internet subscription",
-      referenceId: "BIZ-INT-4567890123",
-      icon: <img src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/87be36aa233d6639c1a4ee2530a8ca56234a7f689a1572d6b8b6e92587142252" alt="" className="w-10 h-10" loading="lazy" />
+      description: "Payment for electricity bill",
+      referenceId: "PLN-ELE-9876543210",
+      icon: <div className="w-10 h-10 bg-yellow-500 rounded-lg flex items-center justify-center">
+        <img src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/87be36aa233d6639c1a4ee2530a8ca56234a7f689a1572d6b8b6e92587142252" alt="" className="w-6 h-6" loading="lazy" />
+      </div>
     },
     { 
-      id: "2",
-      title: "Berkah Basamo QRIS",
-      amount: -30000,
-      date: "03 Feb 2025 • 12:15",
-      type: "thisMonth",
-      status: "Success",
-      description: "Payment for food and beverages",
-      referenceId: "QRIS-BB-7891234560",
-      icon: <img src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/87be36aa233d6639c1a4ee2530a8ca56234a7f689a1572d6b8b6e92587142252" alt="" className="w-10 h-10" loading="lazy" />
+      id: "17",
+      title: "PDAM Water Bill",
+      amount: -175000,
+      date: "Due date 15 Feb 2025",
+      type: "upcoming",
+      status: "Pending",
+      description: "Payment for water utility",
+      referenceId: "PDAM-WTR-1234567890",
+      icon: <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+        <img src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/87be36aa233d6639c1a4ee2530a8ca56234a7f689a1572d6b8b6e92587142252" alt="" className="w-6 h-6" loading="lazy" />
+      </div>
     },
     { 
       id: "3",
@@ -58,7 +62,176 @@ const TransactionDetail = () => {
       description: "Top up balance via Bank Transfer",
       referenceId: "TOPUP-789456123",
       icon: <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
-        <Download className="w-6 h-6 text-white" />
+        <Plus className="w-6 h-6 text-white" />
+      </div>
+    },
+    {
+      id: "4",
+      title: "Starbucks Coffee",
+      amount: -45000,
+      date: "03 Feb 2025 • 10:30",
+      type: "thisMonth",
+      status: "Success",
+      description: "Payment for coffee and pastry",
+      referenceId: "SB-COFE-5678901234",
+      icon: <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
+        <Coffee className="w-6 h-6 text-white" />
+      </div>
+    },
+    {
+      id: "5",
+      title: "Mobile Credit",
+      amount: -100000,
+      date: "02 Feb 2025 • 15:45",
+      type: "thisMonth",
+      status: "Success",
+      description: "Phone credit reload",
+      referenceId: "MOB-CRD-6789012345",
+      icon: <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center">
+        <Smartphone className="w-6 h-6 text-white" />
+      </div>
+    },
+    {
+      id: "6",
+      title: "Grocery Shopping",
+      amount: -250000,
+      date: "02 Feb 2025 • 14:20",
+      type: "thisMonth",
+      status: "Success",
+      description: "Groceries at Superindo",
+      referenceId: "GRO-SUP-7890123456",
+      icon: <div className="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center">
+        <ShoppingCart className="w-6 h-6 text-white" />
+      </div>
+    },
+    {
+      id: "7",
+      title: "Credit Card Bill",
+      amount: -1500000,
+      date: "01 Feb 2025 • 09:15",
+      type: "thisMonth",
+      status: "Success",
+      description: "Payment for credit card bill",
+      referenceId: "CC-BILL-8901234567",
+      icon: <div className="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center">
+        <CreditCard className="w-6 h-6 text-white" />
+      </div>
+    },
+    {
+      id: "8",
+      title: "Top Up",
+      amount: 2000000,
+      date: "01 Feb 2025 • 08:30",
+      type: "thisMonth",
+      status: "Success",
+      description: "Top up balance via Bank Transfer",
+      referenceId: "TOPUP-9012345678",
+      icon: <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+        <Plus className="w-6 h-6 text-white" />
+      </div>
+    },
+    {
+      id: "9",
+      title: "Netflix Subscription",
+      amount: -159000,
+      date: "31 Jan 2025 • 23:59",
+      type: "thisMonth",
+      status: "Success",
+      description: "Monthly subscription payment",
+      referenceId: "NFLX-SUB-0123456789",
+      icon: <div className="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center">
+        <img src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/87be36aa233d6639c1a4ee2530a8ca56234a7f689a1572d6b8b6e92587142252" alt="" className="w-6 h-6" loading="lazy" />
+      </div>
+    },
+    {
+      id: "10",
+      title: "Restaurant Payment",
+      amount: -325000,
+      date: "31 Jan 2025 • 20:15",
+      type: "thisMonth",
+      status: "Success",
+      description: "Dinner at Sushi Tei",
+      referenceId: "REST-SUSH-1234567890",
+      icon: <div className="w-10 h-10 bg-yellow-500 rounded-lg flex items-center justify-center">
+        <Coffee className="w-6 h-6 text-white" />
+      </div>
+    },
+    {
+      id: "11",
+      title: "Taxi Ride",
+      amount: -75000,
+      date: "31 Jan 2025 • 18:45",
+      type: "thisMonth",
+      status: "Success",
+      description: "Transportation via GoJek",
+      referenceId: "TAXI-GO-2345678901",
+      icon: <div className="w-10 h-10 bg-blue-400 rounded-lg flex items-center justify-center">
+        <img src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/87be36aa233d6639c1a4ee2530a8ca56234a7f689a1572d6b8b6e92587142252" alt="" className="w-6 h-6" loading="lazy" />
+      </div>
+    },
+    {
+      id: "12",
+      title: "Online Shopping",
+      amount: -899000,
+      date: "31 Jan 2025 • 15:30",
+      type: "thisMonth",
+      status: "Success",
+      description: "Purchase on Tokopedia",
+      referenceId: "SHOP-TOKO-3456789012",
+      icon: <div className="w-10 h-10 bg-pink-500 rounded-lg flex items-center justify-center">
+        <ShoppingCart className="w-6 h-6 text-white" />
+      </div>
+    },
+    {
+      id: "13",
+      title: "Top Up",
+      amount: 1500000,
+      date: "31 Jan 2025 • 14:20",
+      type: "thisMonth",
+      status: "Success",
+      description: "Top up balance via Bank Transfer",
+      referenceId: "TOPUP-4567890123",
+      icon: <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+        <Plus className="w-6 h-6 text-white" />
+      </div>
+    },
+    {
+      id: "14",
+      title: "Electricity Bill",
+      amount: -450000,
+      date: "31 Jan 2025 • 10:00",
+      type: "thisMonth",
+      status: "Success",
+      description: "Payment for January electricity",
+      referenceId: "PLN-JAN-5678901234",
+      icon: <div className="w-10 h-10 bg-yellow-600 rounded-lg flex items-center justify-center">
+        <img src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/87be36aa233d6639c1a4ee2530a8ca56234a7f689a1572d6b8b6e92587142252" alt="" className="w-6 h-6" loading="lazy" />
+      </div>
+    },
+    {
+      id: "15",
+      title: "Water Bill",
+      amount: -225000,
+      date: "31 Jan 2025 • 09:45",
+      type: "thisMonth",
+      status: "Success",
+      description: "Payment for January water usage",
+      referenceId: "WATER-JAN-6789012345",
+      icon: <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+        <img src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/87be36aa233d6639c1a4ee2530a8ca56234a7f689a1572d6b8b6e92587142252" alt="" className="w-6 h-6" loading="lazy" />
+      </div>
+    },
+    {
+      id: "16",
+      title: "Gas Bill",
+      amount: -150000,
+      date: "31 Jan 2025 • 09:30",
+      type: "thisMonth",
+      status: "Success",
+      description: "Payment for January gas usage",
+      referenceId: "GAS-JAN-7890123456",
+      icon: <div className="w-10 h-10 bg-gray-600 rounded-lg flex items-center justify-center">
+        <img src="https://cdn.builder.io/api/v1/image/assets/b619760657a6454d8d32ae280985c005/87be36aa233d6639c1a4ee2530a8ca56234a7f689a1572d6b8b6e92587142252" alt="" className="w-6 h-6" loading="lazy" />
       </div>
     }
   ];
